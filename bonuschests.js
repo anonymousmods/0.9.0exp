@@ -7,13 +7,13 @@ var torch = 50;
 function newLevel(){
 
  
-for(var i = 0; i < 5000; i++){
+for(var i = 0; i < 2000; i++){
 
 var chestX = Math.floor((Math.random() * 256) + 1);
-var chestY = Math.floor((Math.random() * 80) + 1);
+var chestY = Math.floor((Math.random() * 125) + 1);
 var chestZ = Math.floor((Math.random() * 256) + 1);
 
-if(Level.getTile(chestX, chestY-1, chestZ) == 2){
+if(Level.getTile(chestX, chestY-1, chestZ) == 2 || Level.getTile(chestX, chestY-1, chestZ) == 12 && Level.getTile(chestX, chestY+1, chestZ) != 8 && Level.getTile(chestX-2, chestY, chestZ) != 8 || Level.getTile(chestX, chestY-1, chestZ) == 79){
 
 
 Level.setTile(chestX, chestY, chestZ+1, torch, 0);
